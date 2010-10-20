@@ -3,7 +3,7 @@
       paperHeight = $(window).height(),
       r = Raphael(0, 0, paperWidth, paperHeight);
       
-  r.customAttributes.name = function(name, show) {
+  r.customAttributes.name = function(name) {
     r.text(this.attr("cx"), this.attr("cy"), name);
   };
 
@@ -13,7 +13,6 @@
       while (base--) {
           something.diagonal(base);
       }
-
       something.getData();
     },
 
@@ -51,16 +50,16 @@
 
     circle: function (number, person) {
       var diameter = number * 2;
-      
+
       var circle = r.circle(
                       diameter + something.randomX(),
                       diameter + something.randomY(),
                       number
                     ).attr({
                       fill: "hsb(" + Math.random() + "," + Math.random() + "," + Math.random() + ")",
-                      stroke: "none", 
-                      // href: person.h3.a.href,
-                      // name: person.h3.a.em,
+                      stroke: "none",
+                      href: person.h3.a.href,
+                      name: person.h3.a.em,
                       opacity: Math.random()
                     });
 
